@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ashinaga AI Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+        <div class="logo-section">
+
+            <h1>Ashinaga</h1>
+            <p>AI Assistant</p>
+
+        </div>
+
+        <button class="new-chat-btn" onclick = "newChat()">
+            + New Chat
+        </button>
+
+        <div class="recent-chats">
+
+            <h3>Recent Chats</h3>
+
+            <div class="chat-item">
+                Scholarship Information
+            </div>
+
+            <div class="chat-item">
+                Application Process
+            </div>
+
+            <div class="chat-item">
+                Student Support
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MAIN CHAT -->
+    <div class="chat-section">
+
+        <!-- TOP BAR -->
+        <div class="top-bar">
+
+            <div>
+                <h2>Ashinaga AI Assistant</h2>
+                <span class="online-status">
+                    ● Online
+                </span>
+            </div>
+
+        </div>
+
+        <!-- CHAT AREA -->
+        <div id="chat-box"></div>
+
+        <!-- INPUT -->
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="message"
+                placeholder="Ask something..."
+            >
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
