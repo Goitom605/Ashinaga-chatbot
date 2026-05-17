@@ -9,7 +9,32 @@
     <title>Ashinaga AI Assistant</title>
 
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='ashinaga-logo.png') }}">
+
+
+      
+<div class="brand-container">
+
+    <img
+        src="{{ url_for('static', filename='ashinaga-logo.png') }}"
+        class="brand-logo"
+    >
+
+    <div class="brand-text">
+
+        <h2>Ashinaga</h2>
+
+        <p>AI Assistant</p>
+
+    </div>
+
+</div>
+
+
 
 </head>
 
@@ -19,14 +44,7 @@
 
     <!-- SIDEBAR -->
     <div class="sidebar">
-
-        <div class="logo-section">
-
-            <h1>Ashinaga</h1>
-            <p>AI Assistant</p>
-
-        </div>
-
+        
         <button class="new-chat-btn" onclick = "newChat()">
             + New Chat
         </button>
@@ -49,6 +67,22 @@
 
         </div>
 
+    <!-- INFO SECTION -->
+
+        <div class="info-section">
+
+            <h3>Information</h3>
+
+            <div class="info-item" onclick="openDeveloperModal()">
+                About the Developer
+            </div>
+
+            <div class="info-item" onclick="openAssistantModal()">
+                About This Assistant
+            </div>
+
+        </div>
+
     </div>
 
     <!-- MAIN CHAT -->
@@ -67,7 +101,14 @@
         </div>
 
         <!-- CHAT AREA -->
-        <div id="chat-box"></div>
+        <div id="chat-box">
+            <div id = "welcome-section">
+                <h1>Hello! What Can I Help You?</h1>
+                <p>Ask me any question about Ashinaga, and I will try
+                    to answer to the best of my knowledge.
+                </p>
+            </div>
+        </div>
 
         <!-- INPUT -->
         <div class="input-area">
@@ -84,11 +125,86 @@
 
         </div>
 
+    <!-- DISCLAIMER (BELOW INPUT) -->
+    <div class="disclaimer">
+        <p>
+        Ashinaga AI Assistant can make mistakes.
+        Check important information on
+        <a href="https://www.ashinaga.org" target="_blank">
+           Ashinaga's official website
+        </a>, please.
+         </p>
+        </div>
+
     </div>
 
 </div>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+<!-- ASSISTANT MODAL -->
+<div id="assistant-modal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close-btn"
+              onclick="closeAssistantModal()">
+              &times;
+        </span>
+
+        <h2>About This Assistant</h2>
+
+        <p>
+            Ashinaga AI Assistant is an AI-powered chatbot
+            designed to help users learn about Ashinaga’s
+            mission, scholarships, educational support,
+            founder, and global initiatives.
+        </p>
+
+        <p>
+            Users can ask questions and receive quick,
+            helpful responses related to Ashinaga.
+        </p>
+
+        <p>
+            <strong>Note</strong>: This AI assistant can make mistakes, so please double check important info.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- DEVELOPER MODAL -->
+
+<div id="developer-modal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close-btn"
+              onclick="closeDeveloperModal()">
+              &times;
+        </span>
+
+        <h2>About the Developer</h2>
+
+        <p>
+            My name is Goitom Adisu, a young Ethiopian tech enthusiast. I am passionate about
+            Artificial Intelligence, education,
+            and technology for social impact.
+        </p>
+
+        <p>
+            I have built this online AI assistant because I strongly believe that it would help both students and donators who might want to know Ashinaga in a simple way.
+            Additionally, this have demonstrated my interest in AI and technological impact.
+        </p>
+
+        <p>
+            <strong> Thank You So Much For Using My Product.</strong>
+        </p>
+
+    </div>
+
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>

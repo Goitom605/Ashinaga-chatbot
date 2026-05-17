@@ -90,3 +90,30 @@ function removeTypingIndicator() {
         typing.remove();
     }
 }
+
+
+
+// Assistant modal
+
+function openAssistantModal() {
+
+    document.getElementById("assistant-modal").style.display = "block";
+}
+
+function closeAssistantModal() {
+
+    document.getElementById("assistant-modal").style.display = "none";
+}
+
+
+// Developer modal
+
+function openDeveloperModal() {
+
+    document.getElementById("developer-modal").style.display = "block";
+}
+
+function closeDeveloperModal() {
+
+    document.getElementById("developer-modal").style.display = "none";
+}
